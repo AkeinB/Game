@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#ifndef PLAYER_H
-#define PLAYER_H
+#ifndef BOSS_H
+#define BOSS_H
 
 class Boss
 {

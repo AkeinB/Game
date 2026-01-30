@@ -3,31 +3,30 @@
 #ifndef STATSGENERATOR_H
 #define STATSGENERATOR_H
 
+
+//generates a random stat between 5 and 20
 int StatRoller()
 {
-    int stat = rand() % 20 + 1;
+    int stat = rand() % 16 + 5; // 16 possible values (5 to 20 inclusive)
 
-    if (stat < 5)
-        {
-        stat = 5;
-        }
+    //stat = (stat < 5) ? stat = 5 : stat;
 
     return stat;
 }
 
+// function that evaluates if a stat is at its minimum value (5)
 bool StatChecker( int stat)
 {
-    bool valid = (stat <= 5) ? true : false;
+    bool valid = (stat == 5);
 
     return valid;
 }
 
-int StatApplier(int Stat, bool boost)
+// function that modifies a stat if StaterChecker returns true
+int StatModifier(int Stat, bool statChecker)
 {
-    if (boost)
-    {
-        Stat += 5;
-    }
+    Stat = (statChecker) ? Stat + 5 : Stat;
+    
     return Stat;
 }
 
