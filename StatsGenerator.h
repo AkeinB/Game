@@ -23,12 +23,36 @@ bool StatChecker( int stat)
 }
 
 // function that modifies a stat if StaterChecker returns true
-int StatModifier(int Stat, bool statChecker)
+int StatModifierPitty(int Stat, bool statChecker)
 {
     Stat = (statChecker) ? Stat + 5 : Stat;
     
     return Stat;
 }
 
+// function that tracks whether the pitty modifier should be applied
+int PittyTracker(bool statChecker)
+{
+    static int count = 0;
+    if (statChecker)
+    {
+        count = 1;
+    }
+    else
+    {
+        count = 0;
+    }
+    return count;
+}
 
+// function that applies the pitty modifier to the stat
+int PiittyApplier(int stat, int pittyTracker, int statmodifier)
+{
+    if (pittyTracker == 1)
+    {
+        stat = statmodifier;
+        return stat;
+    }
+  
+}
 #endif
