@@ -48,11 +48,10 @@ int PittyTracker(bool statChecker)
 // function that applies the pitty modifier to the stat
 int PiittyApplier(int stat, int pittyTracker, int statmodifier)
 {
-    if (pittyTracker == 1)
-    {
-        stat = statmodifier;
+    stat = (pittyTracker == 0) ? stat : statmodifier;
+    
         return stat;
-    }
+    
   
 }
 #endif
