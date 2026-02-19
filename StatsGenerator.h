@@ -22,7 +22,7 @@ bool StatChecker( int stat)
     return valid;
 }
 
-// function that modifies a stat if StaterChecker returns true
+// function that modifies a stat if StatChecker returns true
 int StatModifierPitty(int Stat, bool statChecker)
 {
     Stat = (statChecker) ? Stat + 5 : Stat;

@@ -1,20 +1,27 @@
-#include <iostream>
 #include <string>
-#include <vector>
+#include <iostream>
+#include "StatsGenerator.h"
+using std::string;
+using std::cout;
+using std::cin;
+using std::endl;
 #ifndef PLAYER_H
 #define PLAYER_H
+
 
 
 class Player
 {
     private:
-        std::string CharacterName;
+        string CharacterName;
         int HitPoints;
         int AttackPoints;
         int EvadePoints;
     public:
         // Constructor
-        Player(std::string& name, int hitPoints, int attackPoints, int evadePoints)
-            : CharacterName(name), HitPoints(hitPoints), AttackPoints(attackPoints), EvadePoints(evadePoints) {}    
+        Player(const string& name, int hitPoints, int attackPoints, int evadePoints)
+            : CharacterName(name), HitPoints(hitPoints), AttackPoints(attackPoints), EvadePoints(evadePoints) {} 
+        
+
 };
 #endif
