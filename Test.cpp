@@ -10,12 +10,15 @@ using namespace std;
 
 int main()
 {
+    Player* player1 = new Player;
     
-    cout << "Enter Character name: ";
-    string cn;
-    cin >> cn;
+    cout << "Enter character name: ";
+    string name;
+    cin >> name;
 
-    
+    player1->setCharacterName(name);
+
+    cout << "Generating stats for " << player1->getCharacterName() << "..." << endl;
 
 
     return 0;

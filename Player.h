@@ -19,9 +19,53 @@ class Player
         int EvadePoints;
     public:
         // Constructor
-        Player(const string& name, int hitPoints, int attackPoints, int evadePoints)
+        Player(const string& name="", int hitPoints=0, int attackPoints=0, int evadePoints=0)
             : CharacterName(name), HitPoints(hitPoints), AttackPoints(attackPoints), EvadePoints(evadePoints) {} 
+
+        //||====================getters================================||
+        string getCharacterName() const
+        {
+            return CharacterName;
+        }
+
+        int getHitPoints() const
+        {
+            return HitPoints;
+        }
         
+        int getAttackPoints() const
+        {
+            return AttackPoints;
+        }
+
+        int getEvadePoints() const
+        {
+            return EvadePoints;
+        }
+        
+        //||====================setters================================||
+        void setCharacterName(const string& name)
+        {
+            CharacterName = name;
+        }
+
+        void setHitPoints(int hitPoints)
+        {
+            HitPoints = hitPoints;
+        }
+
+        void setAttackPoints(int attackPoints)
+        {
+            AttackPoints = attackPoints;
+        }
+
+        void setEvadePoints(int evadePoints)
+        {
+            EvadePoints = evadePoints;
+        }
+    
+
+    
 
 };
 #endif
