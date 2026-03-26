@@ -25,24 +25,25 @@ bool StatChecker( int stat)
 // function that modifies a stat if StatChecker returns true
 int StatModifierPitty(int Stat, bool statChecker)
 {
-    Stat = (statChecker) ? Stat + 5 : Stat;
-    
+    if (statChecker)
+    {
+        Stat = 5; // Set the stat to 5 if it is at its minimum value
+    }
+
     return Stat;
 }
 
 // function that tracks whether the pitty modifier should be applied
-int PittyTracker(bool statChecker)
+bool PittyTracker(bool statChecker)
 {
-    static int count = 0;
     if (statChecker)
     {
-        count = 1;
+        return true;
     }
     else
     {
-        count = 0;
+        return false;
     }
-    return count;
 }
 
 // function that applies the pitty modifier to the stat
